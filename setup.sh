@@ -7,25 +7,23 @@
 install_nebula_arm() {
 
 echo Downloading and setting up temporary access via Nebula 
-mkdir /opt/nebula && pushd . && cd /opt/nebula
-wget https://github.com/slackhq/nebula/releases/download/v1.4.0/nebula-linux-arm64.tar.gz
+mkdir /opt/nebula
+wget --directory-prefix=/opt/nebula/ https://github.com/slackhq/nebula/releases/download/v1.4.0/nebula-linux-arm64.tar.gz
 tar -xzf nebula-linux-arm64.tar.gz
 chmod +x nebula
 
 setup_temporary_access()
-popd
 }
 
 install_nebula_amd64() {
 
 echo Downloading and setting up temporary access via Nebula 
-mkdir /opt/nebula && pushd . && cd /opt/nebula
-wget https://github.com/slackhq/nebula/releases/download/v1.4.0/nebula-linux-amd64.tar.gz
+mkdir /opt/nebula
+wget --directory-prefix=/opt/nebula/ https://github.com/slackhq/nebula/releases/download/v1.4.0/nebula-linux-amd64.tar.gz
 tar -xzf nebula-linux-amd64.tar.gz
 chmod +x nebula
 
 setup_temporary_access()
-popd
 }
 
 setup_temporary_access() {
