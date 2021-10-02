@@ -9,8 +9,8 @@ ssh-import-id gh:jgrus
 echo Checking platform architecture
 arch=$(arch)
 case $arch in
-	aarch64) install_nebula_arm();;
-	x86_64) install_nebula_amd64();;
+	aarch64) install_nebula_arm() ;;
+	x86_64) install_nebula_amd64() ;;
 	* ) echo Unkown architecture $arch. Manual configuration is required, exiting setup script. && exit 1
 esac
 
