@@ -49,15 +49,15 @@ ssh-import-id gh:jgrus
 echo Checking platform architecture
 arch=$(arch)
 case "$arch" in
-	'aarch64'|'amd64' ) install_nebula_arm() ;;
-	'x86_64' ) install_nebula_amd64() ;;
+	'aarch64'|'amd64' ) install_nebula_arm ;;
+	'x86_64' ) install_nebula_amd64 ;;
 	* ) echo Unkown architecture $arch. Manual configuration is required, exiting setup script. && exit 1 ;;
 esac
 
 user=$(whoami)
 echo Setting up remote administration on $user@10.11.11.11
-setup_temporary_access()
-start_nebula()
+setup_temporary_access
+start_nebula
 exit 0
 
 
