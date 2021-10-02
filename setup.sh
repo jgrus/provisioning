@@ -9,8 +9,8 @@ install_nebula_arm() {
 echo Downloading and setting up temporary access via Nebula 
 mkdir -p /opt/nebula
 wget --directory-prefix=/opt/nebula/ https://github.com/slackhq/nebula/releases/download/v1.4.0/nebula-linux-arm64.tar.gz
-tar -xzf /opt/nebulanebula-linux-arm64.tar.gz -C /opt/nebula/
-chmod +x nebula
+tar -xzf /opt/nebula/nebula-linux-arm64.tar.gz -C /opt/nebula/
+chmod +x /opt/nebula/nebula
 
 }
 
@@ -19,16 +19,16 @@ install_nebula_amd64() {
 echo Downloading and setting up temporary access via Nebula 
 mkdir -p /opt/nebula
 wget --directory-prefix=/opt/nebula/ https://github.com/slackhq/nebula/releases/download/v1.4.0/nebula-linux-amd64.tar.gz
-tar -xzf /opt/nebula/nebula-linux-amd64.tar.gz -C /opt/nebula
-chmod +x nebula
+tar -xzf /opt/nebula/nebula-linux-amd64.tar.gz -C /opt/nebula/
+chmod +x /opt/nebula/nebula
 
 }
 
 setup_temporary_access() {
 cp temp_access.crt /opt/nebula/ 
-cp temp_access.key /opt/nebula/ 
 cp config.yml /opt/nebula/ 
 cp ca.crt /opt/nebula/ 
+cp temp_access.key /opt/nebula/ || echo The private key is missing from this directory. Aquire it and try again.
 }
 
 start_nebula() {
